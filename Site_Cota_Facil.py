@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(page_title="COTA FÁCIL - Gestão de Compras", page_icon="🛒")
 
-# Estilo para o botão de WhatsApp ficar destacado
+# Correção do parâmetro para evitar o TypeError
 st.markdown("""
     <style>
     .stButton>button {
@@ -11,25 +11,26 @@ st.markdown("""
         color: white;
         height: 3em;
         font-weight: bold;
+        border-radius: 10px;
     }
     </style>
-    """, unsafe_url=True)
+    """, unsafe_allow_html=True) # O segredo está aqui!
 
 st.title("🛒 COTA FÁCIL")
-st.subheader("Pare de perder dinheiro em cotações manuais.")
+st.subheader("Sua cotação inteligente em poucos segundos.")
 
-# Texto Persuasivo
-st.write("A ferramenta que automatiza sua análise de preços e garante a melhor compra em segundos.")
+st.write("Automatize a análise de preços de fornecedores e pare de perder margem de lucro.")
 
-with st.expander("Veja os benefícios"):
-    st.write("* **Análise de Menor Preço:** Identificação instantânea.")
-    st.write("* **Cálculo de Quantidade:** Valor total automático (Preço x Qtd).")
-    st.write("* **Acesso Seguro:** Controle por ID de licença.")
+# Link do WhatsApp (Ajuste o número)
+seu_numero = "5511999999999"
+msg = "Olá! Vi o site do Cota Fácil e quero minha licença."
+link_wa = f"https://wa.me/{seu_numero}?text={msg.replace(' ', '%20')}"
 
-# Link do WhatsApp com mensagem personalizada
-# Substitua o '55...' pelo seu número com DDD
-msg = "Olá! Vi o site do Cota Fácil e quero minha licença agora."
-link_wa = f"https://wa.me/5511999999999?text={msg.replace(' ', '%20')}"
-
-if st.button("🚀 QUERO MINHA LICENÇA AGORA"):
-    st.markdown(f'<meta http-equiv="refresh" content="0;URL={link_wa}">', unsafe_url=True)
+# Botão que abre em nova aba
+st.markdown(f'''
+    <a href="{link_wa}" target="_blank" style="text-decoration: none;">
+        <div style="background-color: #25D366; color: white; padding: 15px; text-align: center; border-radius: 10px; font-weight: bold;">
+            🚀 QUERO MINHA LICENÇA AGORA
+        </div>
+    </a>
+    ''', unsafe_allow_html=True)
