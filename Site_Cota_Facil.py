@@ -1,77 +1,30 @@
-import streamlit as st
-
-st.set_page_config(page_title="COTA FÁCIL - Gestão de Compras", page_icon="🛒", layout="wide")
-
-# CSS Customizado para um visual moderno
-st.markdown("""
-    <style>
-    .main { background-color: #0e1117; }
-    .stMarkdown { color: #ffffff; }
-    .card {
-        background-color: #1e2130;
-        padding: 20px;
-        border-radius: 15px;
-        border-left: 5px solid #25D366;
-        margin-bottom: 20px;
-    }
-    .price-tag {
-        font-size: 24px;
-        font-weight: bold;
-        color: #25D366;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-# Hero Section
-col1, col2 = st.columns([2, 1])
-
-with col1:
-    st.title("🛒 COTA FÁCIL")
-    st.header("Domine suas compras e proteja sua margem de lucro.")
-    st.write("A ferramenta inteligente para quem não tem tempo a perder com planilhas confusas.")
-
-with col2:
-    # Espaço para uma imagem ou logo
-    st.image("https://cdn-icons-png.flaticon.com/512/3225/3225194.png", width=150)
-
+# --- SEÇÃO: COMO FUNCIONA ---
 st.divider()
+st.header("🎯 Três passos para otimizar suas compras")
+col_step1, col_step2, col_step3 = st.columns(3)
 
-# Seção de Benefícios em Colunas (Cards)
-st.subheader("Por que o COTA FÁCIL é indispensável?")
-c1, c2, c3 = st.columns(3)
+with col_step1:
+    st.write("### 1. Ativação")
+    st.write("Após a assinatura, seu ID é liberado na hora.")
 
-with c1:
-    st.markdown("""<div class="card">
-        <h3>⚡ Rapidez</h3>
-        <p>Análise instantânea do menor preço entre múltiplos fornecedores.</p>
-    </div>""", unsafe_allow_html=True)
+with col_step2:
+    st.write("### 2. Input")
+    st.write("Insira os dados da cotação no painel intuitivo.")
 
-with c2:
-    st.markdown("""<div class="card">
-        <h3>📊 Precisão</h3>
-        <p>Cálculo automático de Preço x Quantidade sem erros manuais.</p>
-    </div>""", unsafe_allow_html=True)
+with col_step3:
+    st.write("### 3. Economia")
+    st.write("Visualize o melhor fornecedor e feche o pedido.")
 
-with c3:
-    st.markdown("""<div class="card">
-        <h3>🔐 Segurança</h3>
-        <p>Acesso exclusivo via ID para garantir a privacidade dos seus dados.</p>
-    </div>""", unsafe_allow_html=True)
-
+# --- SEÇÃO: FAQ ---
 st.divider()
+st.header("💬 Perguntas Comuns")
+with st.expander("O sistema funciona em qualquer dispositivo?"):
+    st.write("Sim! O COTA FÁCIL é 100% online e otimizado para navegadores mobile e desktop.")
 
-# Chamada para Ação Final
-st.markdown("<center><h2>Pronto para profissionalizar suas cotações?</h2></center>", unsafe_allow_html=True)
+with st.expander("Como funciona o bloqueio de acesso?"):
+    st.write("Sua licença é válida por 30 dias. O sistema verifica automaticamente o status na Planilha Mestra para garantir sua segurança.")
 
-# Link do WhatsApp
-link_wa = "https://wa.me/5511999999999?text=Quero%20minha%20licença%20do%20Cota%20Facil"
+# --- FOOTER ---
+st.divider()
+st.markdown("<center>© 2026 COTA FÁCIL - Todos os direitos reservados</center>", unsafe_allow_html=True)
 
-st.markdown(f'''
-    <a href="{link_wa}" target="_blank" style="text-decoration: none;">
-        <div style="background-color: #25D366; color: white; padding: 20px; text-align: center; border-radius: 50px; font-weight: bold; font-size: 22px; transition: 0.3s;">
-            🚀 QUERO MINHA LICENÇA AGORA
-        </div>
-    </a>
-    ''', unsafe_allow_html=True)
-
-st.caption("<center>Ativação imediata após confirmação de pagamento.</center>", unsafe_allow_html=True)
